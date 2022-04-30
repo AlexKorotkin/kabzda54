@@ -1,0 +1,18 @@
+span{
+    display: inline-block;
+    width: 100px;
+    border: 1px solid black;
+}
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.blue{
+    margin-left: 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    color: blue;
+}
