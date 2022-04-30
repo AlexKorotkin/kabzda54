@@ -8,6 +8,7 @@ import {UncontrolledAccordion} from "./components/Accordion/UncontrolledAccordio
 import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
 import {UncontrolledInput} from "./components/UncontrolledInput/UncontrolledInput";
 import {GetValueOfUncontrolledInputByButton} from "./components/UncontrolledInput/GetValueOfUncontrolledInputByButton";
+import {ControlledCheckbox, ControlledInput, ControlledSelect} from "./components/ControlledInput/ControlledInput";
 
 type PageTitlePropsType ={
     title:string
@@ -16,6 +17,8 @@ function App() {
     let[onOff,setOnOff] = useState(false);
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false);
+
+
     function setStatus(){
         setOnOff(!onOff);
     }
@@ -30,6 +33,9 @@ function App() {
             <UncontrolledRating/>
             <UncontrolledInput/>
             <GetValueOfUncontrolledInputByButton/>
+            <ControlledInput/>
+            <ControlledCheckbox/>
+            <ControlledSelect/>
         </div>
     );
 }
