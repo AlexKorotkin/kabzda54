@@ -6,6 +6,8 @@ import {OnOff} from "./components/OnOff/OnOff";
 import {OnOff2} from "./components/OnOff/OnOff2";
 import {UncontrolledAccordion} from "./components/Accordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
+import {UncontrolledInput} from "./components/UncontrolledInput/UncontrolledInput";
+import {GetValueOfUncontrolledInputByButton} from "./components/UncontrolledInput/GetValueOfUncontrolledInputByButton";
 
 type PageTitlePropsType ={
     title:string
@@ -26,6 +28,8 @@ function App() {
             <OnOff2/>
             <UncontrolledAccordion titleValue={'USERS'} />
             <UncontrolledRating/>
+            <UncontrolledInput/>
+            <GetValueOfUncontrolledInputByButton/>
         </div>
     );
 }
