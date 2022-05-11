@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import './mySelect.css';
 
 export type ItemType = {
@@ -17,18 +17,22 @@ export function MySelect(props: SelectPropsType) {
 
     let collapsedHandler = () => props.setCollapsed(!props.collapsed)
     return <div className={'select'}>
-        <div className={'.select-item'} onClick={collapsedHandler}>{props.value || 'Значение'}</div>
+        <div className={'select-item'} onClick={collapsedHandler}>{props.value || 'Имя'}</div>
         {
-            props.collapsed && props.items.map(i =>{
-                return <div onMouseEnter={(e)=>{
-                    let elem =e.target as HTMLButtonElement
-                    elem.style.background = "grey"
-                }}
-                            onMouseLeave={(e)=>{
-                                let elem =e.target as HTMLButtonElement
-                                elem.style.background = "white"
-                            }}
-                                onClick={()=>{props.onChange(i.value)}}>
+            props.collapsed && props.items.map(i => {
+                return <div
+                    className={'select-item'}
+                    onMouseEnter={(e) => {
+                        let elem = e.target as HTMLDivElement
+                        elem.style.background = "grey"
+                    }}
+                    onMouseLeave={(e) => {
+                        let elem = e.target as HTMLDivElement
+                        elem.style.background = "white"
+                    }}
+                    onClick={() => {
+                        props.onChange(i.value)
+                    }}>
                     {i.title}
                 </div>
             })

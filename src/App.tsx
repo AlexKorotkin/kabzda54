@@ -10,6 +10,7 @@ import {UncontrolledInput} from "./components/UncontrolledInput/UncontrolledInpu
 import {GetValueOfUncontrolledInputByButton} from "./components/UncontrolledInput/GetValueOfUncontrolledInputByButton";
 import {ControlledCheckbox, ControlledInput, ControlledSelect} from "./components/ControlledInput/ControlledInput";
 import {ItemType, MySelect} from "./components/Select/mySelect";
+import {Select} from "./components/Select/Select";
 
 type PageTitlePropsType ={
     title:string
@@ -20,12 +21,18 @@ function App() {
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false);
     let[selectValue,setSelectValue] = useState<string>('');
     let[collapsed,setCollapsed] = useState<boolean>(false);
+    let[selectValue2,setSelectValue2] = useState<string>('2');
 
     let items:string[] = ['Stars','Moon','Sun','Cars'];
     let selectItems:ItemType[] = [
         {title: 'Valera', value: 1},
         {title: 'Alex', value: 2},
         {title: 'Nika', value: 3}
+    ];
+    let selectItems2:ItemType[] = [
+        {title: 'Valera', value: '1'},
+        {title: 'Alex', value: '2'},
+        {title: 'Nika', value: '3'}
     ];
     function setStatus(){
         setOnOff(!onOff);
@@ -37,6 +44,13 @@ function App() {
             setCollapsed(false)
         }
     }
+
+    function onChange (value: string){
+        let select = selectItems2.find(v => v.value === value)
+        if (select) setSelectValue2(select.value)
+
+    }
+
     return (
         <div className="App">
             <PageTitle title = {'This is components'} />
@@ -52,6 +66,7 @@ function App() {
             <ControlledCheckbox/>
             <ControlledSelect/>
             <MySelect items={selectItems} value={selectValue} onChange={nameSelect} collapsed = {collapsed} setCollapsed ={setCollapsed} />
+           <Select value={selectValue2} onChange={onChange} items={selectItems2} />
         </div>
     );
 }

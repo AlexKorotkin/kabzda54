@@ -1,0 +1,17 @@
+.select{
+    margin-top: 10px;
+    width: 73px;
+    border:1px solid black;
+    cursor: pointer
+}
+.select-item{
+    width: 73px;
+    border:1px solid black;
+    cursor: pointer;
+    background-color:white;
+}
+
+
+.active{
+    background-color: cornflowerblue;
+}

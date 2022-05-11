@@ -1,4 +1,6 @@
 import React from "react";
+import imgWhite from './img/white.png'
+import imgBlack from './img/black.png'
 
  export type RatingValueType =0|1|2|3|4|5
 type RatingPropsType ={
@@ -29,14 +31,14 @@ function Star(props:StarPropsType) {
         <span style={{border:'0px'}} onClick={()=>{props.setRatingValue(props.value)}}>
             {
                 (props.selected) ? <img
-                        src='https://w7.pngwing.com/pngs/690/192/png-transparent-black-star-three-dimensional-stars-angle-triangle-symmetry-thumbnail.png'
+                        src={imgBlack}
                         width={'60px'}
                         height={'60px'}
                         alt=""/>:
                     <img
-                        src='https://w7.pngwing.com/pngs/457/519/png-transparent-star-white-stars-angle-white-triangle-thumbnail.png'
-                        width={'70px'}
-                        height={'70px'}
+                        src={imgWhite}
+                        width={'60px'}
+                        height={'60px'}
                         alt=""/>
             }
         </span>
